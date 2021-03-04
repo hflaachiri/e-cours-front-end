@@ -16,7 +16,7 @@ export class BackOfficeTemplateComponent implements OnInit {
     },
     {
       icon: 'menu_book',
-      link: '/back-office/#',
+      link: '/back-office/cours',
       label: 'Cours',
     },
     {

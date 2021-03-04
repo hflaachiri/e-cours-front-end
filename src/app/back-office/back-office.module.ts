@@ -8,10 +8,12 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {BackOfficeRoutingModule} from './back-office-routing.module';
+import { CoursComponent } from './cours/cours.component';
+import {MatCardModule} from '@angular/material/card';
 
 
 @NgModule({
-  declarations: [DashboardComponent, BackOfficeTemplateComponent],
+  declarations: [DashboardComponent, BackOfficeTemplateComponent, CoursComponent],
   imports: [
     CommonModule,
     BackOfficeRoutingModule,
@@ -19,7 +21,8 @@ import {BackOfficeRoutingModule} from './back-office-routing.module';
     MatListModule,
     MatIconModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCardModule
   ]
 })
 export class BackOfficeModule { }
