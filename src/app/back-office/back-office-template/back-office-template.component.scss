@@ -1,0 +1,14 @@
+@import "../../../custom-theme";
+.sidenav {
+  width: 260px;
+  background-color: map-get($app-primary, 500);
+}
+.logo {
+  padding: 0.5rem;
+  color: white;
+  text-align: center;
+}
+.mat-list-base .mat-list-item{
+  color: white;
+  height: 64px;
+}

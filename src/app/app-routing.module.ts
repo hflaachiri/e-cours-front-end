@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/back-office/dashboard', pathMatch: 'full'},
+  {path: '', redirectTo: 'back-office', pathMatch: 'full'},
   {
     path: 'back-office',
     loadChildren: () => import('./back-office/back-office.module').then(m => m.BackOfficeModule)

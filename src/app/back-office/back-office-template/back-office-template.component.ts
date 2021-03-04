@@ -15,24 +15,24 @@ export class BackOfficeTemplateComponent implements OnInit {
       label: 'Tableau de bord',
     },
     {
+      icon: 'menu_book',
+      link: '/back-office/#',
+      label: 'Cours',
+    },
+    {
+      icon: 'question_answer',
+      link: '/back-office/#',
+      label: 'Forum',
+    },
+    {
+      icon: 'school',
+      link: '/back-office/#',
+      label: 'Enseignants',
+    },
+    {
       icon: 'group',
-      link: '/back-office/sous-traitant/list',
-      label: 'Sous-Traitants',
-    },
-    {
-      icon: 'star_rate',
-      link: '/back-office/evaluation/list',
-      label: 'Évaluation',
-    },
-    {
-      icon: 'search',
-      link: '/back-office/recherche-avance',
-      label: 'Recherche Avancé',
-    },
-    {
-      icon: 'build',
-      link: '/back-office/gestion-des-comptes',
-      label: 'Gestion des comptes',
+      link: '/back-office/#',
+      label: 'Etudiants',
     }
   ];
 
