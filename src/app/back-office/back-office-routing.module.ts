@@ -3,6 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {BackOfficeTemplateComponent} from './back-office-template/back-office-template.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {CoursComponent} from './cours/cours.component';
+import {AfficherCoursComponent} from './afficher-cours/afficher-cours.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
       {
         path: 'cours',
         component: CoursComponent
+      },
+      {
+        path: 'show/:id',
+        component: AfficherCoursComponent
       },
     ]
   },

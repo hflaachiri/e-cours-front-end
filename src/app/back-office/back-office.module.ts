@@ -10,10 +10,11 @@ import {MatButtonModule} from '@angular/material/button';
 import {BackOfficeRoutingModule} from './back-office-routing.module';
 import { CoursComponent } from './cours/cours.component';
 import {MatCardModule} from '@angular/material/card';
+import { AfficherCoursComponent } from './afficher-cours/afficher-cours.component';
 
 
 @NgModule({
-  declarations: [DashboardComponent, BackOfficeTemplateComponent, CoursComponent],
+  declarations: [DashboardComponent, BackOfficeTemplateComponent, CoursComponent, AfficherCoursComponent],
   imports: [
     CommonModule,
     BackOfficeRoutingModule,
