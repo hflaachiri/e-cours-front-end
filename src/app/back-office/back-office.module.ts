@@ -11,10 +11,17 @@ import {BackOfficeRoutingModule} from './back-office-routing.module';
 import { CoursComponent } from './cours/cours.component';
 import {MatCardModule} from '@angular/material/card';
 import { AfficherCoursComponent } from './afficher-cours/afficher-cours.component';
+import {MatOptionModule} from '@angular/material/core';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+import { ListeEnseignantComponent } from './liste-enseignant/liste-enseignant.component';
+import { ListeEtudiantsComponent } from './liste-etudiants/liste-etudiants.component';
+import { ForumComponent } from './forum/forum.component';
+import {MatTableModule} from '@angular/material/table';
 
 
 @NgModule({
-  declarations: [DashboardComponent, BackOfficeTemplateComponent, CoursComponent, AfficherCoursComponent],
+  declarations: [DashboardComponent, BackOfficeTemplateComponent, CoursComponent, AfficherCoursComponent, ListeEnseignantComponent, ListeEtudiantsComponent, ForumComponent],
   imports: [
     CommonModule,
     BackOfficeRoutingModule,
@@ -23,7 +30,11 @@ import { AfficherCoursComponent } from './afficher-cours/afficher-cours.componen
     MatIconModule,
     MatToolbarModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatOptionModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatTableModule
   ]
 })
 export class BackOfficeModule { }

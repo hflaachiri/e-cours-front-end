@@ -4,6 +4,9 @@ import {BackOfficeTemplateComponent} from './back-office-template/back-office-te
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {CoursComponent} from './cours/cours.component';
 import {AfficherCoursComponent} from './afficher-cours/afficher-cours.component';
+import {ListeEnseignantComponent} from './liste-enseignant/liste-enseignant.component';
+import {ListeEtudiantsComponent} from './liste-etudiants/liste-etudiants.component';
+import {ForumComponent} from './forum/forum.component';
 
 const routes: Routes = [
   {
@@ -21,6 +24,18 @@ const routes: Routes = [
       {
         path: 'show/:id',
         component: AfficherCoursComponent
+      },
+      {
+        path: 'enseignants',
+        component: ListeEnseignantComponent
+      },
+      {
+        path: 'etudiants',
+        component: ListeEtudiantsComponent
+      },
+      {
+        path: 'forum',
+        component: ForumComponent
       },
     ]
   },

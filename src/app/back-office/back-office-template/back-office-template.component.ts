@@ -21,17 +21,17 @@ export class BackOfficeTemplateComponent implements OnInit {
     },
     {
       icon: 'question_answer',
-      link: '/back-office/#',
+      link: '/back-office/forum',
       label: 'Forum',
     },
     {
       icon: 'school',
-      link: '/back-office/#',
+      link: '/back-office/enseignants',
       label: 'Enseignants',
     },
     {
       icon: 'group',
-      link: '/back-office/#',
+      link: '/back-office/etudiants',
       label: 'Etudiants',
     }
   ];
