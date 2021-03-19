@@ -1,38 +1,40 @@
-<mat-form-field appearance="fill">
-  <mat-label>Théme</mat-label>
-  <mat-select>
-    <mat-option *ngFor="let food of foods" [value]="food.value">
-      {{food.viewValue}}
-    </mat-option>
-  </mat-select>
-</mat-form-field>
+<div class="d-flex justify-content-around">
+  <mat-form-field appearance="outline">
+    <mat-label>Théme</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let food of foods" [value]="food.value">
+        {{food.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
 
-<mat-form-field appearance="fill">
-  <mat-label>Enseignant</mat-label>
-  <mat-select>
-    <mat-option *ngFor="let food of foods" [value]="food.value">
-      {{food.viewValue}}
-    </mat-option>
-  </mat-select>
-</mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Enseignant</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let food of foods" [value]="food.value">
+        {{food.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
 
-<mat-form-field appearance="fill">
-  <mat-label>Date</mat-label>
-  <mat-select>
-    <mat-option *ngFor="let food of foods" [value]="food.value">
-      {{food.viewValue}}
-    </mat-option>
-  </mat-select>
-</mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Date</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let food of foods" [value]="food.value">
+        {{food.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
 
-<mat-form-field appearance="fill">
-  <mat-label>Promotion</mat-label>
-  <mat-select>
-    <mat-option *ngFor="let food of foods" [value]="food.value">
-      {{food.viewValue}}
-    </mat-option>
-  </mat-select>
-</mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Promotion</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let food of foods" [value]="food.value">
+        {{food.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
 
 <mat-card class="mat-elevation-z4 w-100">
   <mat-card-header>

@@ -1,1 +1,14 @@
-<p>login works!</p>
+
+  <form [formGroup]="loginForm" (ngSubmit)="login()" class="w-100 d-flex flex-column justify-content-center">
+    <app-email-input formControlName="email" class="w-100"></app-email-input>
+    <app-password-input formControlName="password" class="w-100"></app-password-input>
+    <div class="form-actions">
+      <button mat-raised-button
+              id="connexion-button"
+              type="submit"
+              color="primary"
+              [disabled]="!loginForm.valid">Connexion
+      </button>
+    </div>
+  </form>
+

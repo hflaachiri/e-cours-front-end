@@ -4,6 +4,17 @@ import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppRoutingModule} from './app-routing.module';
+import {TOKEN_KEY} from './authentication/authentication.service';
+import {JwtModule} from '@auth0/angular-jwt';
+import {environment} from '../environments/environment';
+import {HttpClientModule} from '@angular/common/http';
+
+/**
+ * This function is used by the jwt helper to get the token
+ */
+export function tokenGetter(): string {
+  return localStorage.getItem(TOKEN_KEY);
+}
 
 @NgModule({
   declarations: [
@@ -12,7 +23,15 @@ import {AppRoutingModule} from './app-routing.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter,
+        allowedDomains: environment.whiteList,
+      }
+    }),
+
   ],
   providers: [],
   bootstrap: [AppComponent]

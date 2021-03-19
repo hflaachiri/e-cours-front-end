@@ -1,0 +1,41 @@
+.authentication-page {
+  display: flex;
+  height: 100%;
+}
+
+.authentication-page-left-column, .authentication-page-right-column {
+  flex: 50%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 6%;
+}
+
+.authentication-page-left-column {
+  justify-content: space-around;
+  align-items: center;
+  img {
+    width: 100%;
+  }
+}
+
+.authentication-page-right-column {
+  justify-content: center;
+}
+.app-definition {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+h1 {
+  font-size: 1.85em;
+}
+
+@media (max-width: 768px) {
+  .authentication-page-left-column, .authentication-page-right-column {
+    padding: 5%;
+  }
+  .authentication-page-left-column {
+    display: none;
+  }
+}

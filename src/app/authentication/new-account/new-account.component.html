@@ -1,0 +1,39 @@
+
+  <form [formGroup]="newAccountForm" (ngSubmit)="singUp()" class="w-100 d-flex flex-column justify-content-center">
+    <div class="d-flex justify-content-between">
+      <mat-form-field appearance="outline" class="w-50">
+        <mat-label>Nom</mat-label>
+        <input type="text" id="lastName" matInput formControlName="lastName">
+      </mat-form-field>
+      <div class="column-divider"></div>
+      <mat-form-field appearance="outline" class="w-50">
+        <mat-label>Prénom</mat-label>
+        <input type="text" id="firstName" matInput formControlName="firstName">
+      </mat-form-field>
+    </div>
+
+    <app-email-input formControlName="email" class="w-100"></app-email-input>
+
+    <app-password-input formControlName="password" class="w-100"></app-password-input>
+
+    <div class="d-flex justify-content-around">
+      <mat-form-field appearance="outline" class="w-50">
+        <mat-label>Année scolaire</mat-label>
+        <input type="text" id="schoolYear" matInput formControlName="schoolYear">
+      </mat-form-field>
+      <div class="column-divider"></div>
+      <mat-form-field appearance="outline" class="w-50">
+        <mat-label>Site</mat-label>
+        <input type="text" id="site" matInput formControlName="site">
+      </mat-form-field>
+    </div>
+    <div class="form-actions">
+      <button mat-raised-button
+              id="connexion-button"
+              type="submit"
+              color="primary"
+              >Enregistrer
+      </button>
+    </div>
+  </form>
+

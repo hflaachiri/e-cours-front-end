@@ -1,0 +1,9 @@
+{
+  "id": 13,
+  "email": "hafsa.farhane@etu.univ-amu.fr",
+  "roles": [
+    "ROLE_STUDENT"
+  ],
+  "accessToken": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoYWZzYS5mYXJoYW5lQGV0dS51bml2LWFtdS5mciIsImlhdCI6MTYxNjE1ODU4NSwiZXhwIjoxNjE2MjQ0OTg1fQ.vgVazx6ctk7KS3Hv-az8p4woC7lDyVnHVHpXkabQvITWQhJLMDSIgPDlXalURQNMmMgUM1vzv__LqYTPrI9V9w",
+  "tokenType": "Bearer"
+}

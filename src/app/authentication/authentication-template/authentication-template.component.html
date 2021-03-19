@@ -1,0 +1,21 @@
+<div class="authentication-page">
+  <div class="authentication-page-left-column">
+    <h1>Bienvenu sur {{applicationName}}</h1>
+    <img src="assets/images/auth-background.jpg" alt="{{applicationName}}" class="d-block">
+    <h2 class="app-definition">
+      {{applicationName}} est une application temps réel de suivie de cours en ligne
+    </h2>
+  </div>
+  <div class="authentication-page-right-column">
+    <mat-card class="mat-elevation-z8" style="min-height: 450px;height: 100%">
+      <nav mat-tab-nav-bar mat-stretch-tabs>
+        <a mat-tab-link [routerLink]="'/auth/login'" routerLinkActive>Login</a>
+        <a mat-tab-link [routerLink]="'/auth/new-account'" routerLinkActive>Nouveau compte</a>
+      </nav>
+      <mat-card-content style="height: 100%;">
+        <router-outlet></router-outlet>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+</div>
