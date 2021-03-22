@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthenticationService} from '../../authentication/services/authentication.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-back-office-template',
@@ -36,9 +38,16 @@ export class BackOfficeTemplateComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(
+    private authenticationService: AuthenticationService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
 
+  logout(): void {
+    this.authenticationService.logout();
+    this.router.navigateByUrl('auth/login').then();
+  }
 }

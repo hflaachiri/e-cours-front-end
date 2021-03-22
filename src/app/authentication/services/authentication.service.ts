@@ -36,12 +36,15 @@ export class AuthenticationService {
    * call api to login the user
    */
   login(loginForm: { email: string, password: string }): Observable<any> {
-    return this.http.get(environment.mock.auth.login); // just for mock
-    // return this.http.post(environment.api.auth.login, loginForm);
+    return this.http.post(environment.api.auth.login, loginForm);
   }
 
   saveToken(token: string): void {
     localStorage.setItem(TOKEN_KEY, token);
+  }
+
+  logout(): void {
+    localStorage.clear();
   }
 
 

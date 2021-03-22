@@ -7,7 +7,8 @@ export const environment = {
   whiteList: ['https://ecours-backend-production.herokuapp.com'],
   api: {
     auth: {
-      login: 'https://ecours-backend-production.herokuapp.com/api/auth/signin'
+      login: 'http://localhost:8082/api/auth/signin',
+      signup: 'http://localhost:8082/api/auth/signup/student'
     }
   },
   mock: {

@@ -15,11 +15,14 @@
   </mat-drawer>
 
   <mat-drawer-content>
-    <mat-toolbar color="primary">
-      <button mat-icon-button (click)="drawer.toggle()">
-        <mat-icon>menu</mat-icon>
-      </button>
-    </mat-toolbar>
+      <mat-toolbar color="primary" class="d-flex justify-content-between">
+        <button mat-icon-button (click)="drawer.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <button mat-icon-button (click)="logout()">
+          <mat-icon>power_settings_new</mat-icon>
+        </button>
+      </mat-toolbar>
     <div class="p-4">
       <router-outlet></router-outlet>
     </div>

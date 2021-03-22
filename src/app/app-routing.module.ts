@@ -1,11 +1,13 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
+import {IsAuthenticatedGuardService} from './is-authenticated-guard.service';
 
 const routes: Routes = [
   {path: '', redirectTo: '/auth/login', pathMatch: 'full'},
   {
     path: 'back-office',
-    loadChildren: () => import('./back-office/back-office.module').then(m => m.BackOfficeModule)
+    loadChildren: () => import('./back-office/back-office.module').then(m => m.BackOfficeModule),
+    canActivate: [IsAuthenticatedGuardService]
   },
   {
     path: 'auth',

@@ -10,6 +10,7 @@ import { AuthenticationTemplateComponent } from './authentication-template/authe
 import {MatCardModule} from '@angular/material/card';
 import {MatTabsModule} from '@angular/material/tabs';
 import { NewAccountComponent } from './new-account/new-account.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 
@@ -23,7 +24,8 @@ import { NewAccountComponent } from './new-account/new-account.component';
     MatInputModule,
     MatButtonModule,
     MatCardModule,
-    MatTabsModule
+    MatTabsModule,
+    MatSnackBarModule
   ]
 })
 export class AuthenticationModule { }
