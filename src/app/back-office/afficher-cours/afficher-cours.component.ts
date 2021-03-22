@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {CoursService} from '../services/cours.service';
+import {ActivatedRoute} from '@angular/router';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-afficher-cours',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AfficherCoursComponent implements OnInit {
 
-  constructor() { }
+  coursId;
+  lesson: any;
+
+  constructor(
+    private coursService: CoursService,
+    private route: ActivatedRoute,
+  ) {
+    this.coursId = this.route.snapshot.params.id;
+  }
 
   ngOnInit(): void {
+    this.coursService.getCoursById(this.coursId).subscribe(
+      (cours) => {
+        this.lesson = cours;
+      }
+    );
   }
 
 }

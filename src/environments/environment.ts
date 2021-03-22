@@ -13,6 +13,16 @@ export const environment = {
   mock: {
     auth: {
       login: '/assets/mock/login.json'
+    },
+    cours: {
+      search: '/assets/mock/cours.json',
+      findById: '/assets/mock/cours-${id}.json'
+    },
+    themes: {
+      findAll: '/assets/mock/themes.json'
+    },
+    enseignants: {
+      findAll: '/assets/mock/enseignants.json'
     }
   }
 };

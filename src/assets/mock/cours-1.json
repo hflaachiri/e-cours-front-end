@@ -1,0 +1,26 @@
+{
+  "id": 1,
+  "name": "Initialisation au Big Data",
+  "description": "Lorem ipsum dolor sit amet,consectetur adipisicing elit. Animi distinctio dolor excepturi impedit ipsum iste iusto molestiae rerum voluptate! Corporis deleniti facere ipsam laborum, numquam odit perferendis quos sint temporibus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi distinctio dolor excepturi impedit ipsum iste iusto molestiae rerum voluptate! Corporis deleniti facere ipsam laborum, numquam odit perferendis quos sint temporibus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi distinctio dolor excepturi impedit ipsum iste iusto molestiae rerum voluptate! Corporis deleniti facere ipsam laborum, numquam odit perferendis quos sint temporibus!",
+  "schoolSubject": {
+    "id": "10",
+    "name": "Big Data"
+  },
+  "domain": {
+    "id": "20",
+    "name": "Informatique"
+  },
+  "date": "01-01-2021",
+  "owners": [
+    {
+      "id": "30",
+      "firstName": "Albert",
+      "lastName": "DUPONT",
+      "email": "albert.dupont@univ-amu.fr"
+    }
+  ],
+  "videoLink": "https://www.youtube.com/watch?v=CMhKri7enFc",
+  "documentsLinks": [
+    "https://www.lebigdata.fr/definition-big-data#:~:text=Il%20s'agit%20de%20d%C3%A9couvrir,informations%20sur%20une%20base%20num%C3%A9rique."
+  ]
+}

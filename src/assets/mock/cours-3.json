@@ -1,0 +1,23 @@
+{
+  "id": 3,
+  "name": "Anglais",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi distinctio dolor excepturi impedit ipsum iste iusto molestiae rerum voluptate! Corporis deleniti facere ipsam laborum, numquam odit perferendis quos sint temporibus!",
+
+  "schoolSubject": {
+    "id": "20",
+    "name": "Communication"
+  },
+  "domain": {
+    "id": "30",
+    "name": "Technique d'expression et de communication"
+  },
+  "date": "01-01-2021",
+  "owners": [
+    {
+      "id": "50",
+      "firstName": "Maria",
+      "lastName": "SCHNEIDER",
+      "email": "maria.schneider@univ-amu.fr"
+    }
+  ]
+}

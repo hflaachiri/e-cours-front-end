@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
-import {AuthenticationService} from '../authentication.service';
+import {AuthenticationService} from '../services/authentication.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -16,18 +17,23 @@ export class LoginComponent implements OnInit {
 
 
   constructor(
-    private authService: AuthenticationService
+    private authService: AuthenticationService,
+    private router: Router
   ) {
   }
 
   ngOnInit(): void {
+    if (this.authService.isTokenValid()) {
+      this.router.navigateByUrl('back-office/dashboard').then();
+    }
   }
 
 
   login(): void {
     this.authService.login(this.loginForm.value).subscribe(
       (tokenContainer) => {
-        this.authService.saveToken(tokenContainer.token);
+        this.authService.saveToken(tokenContainer.accessToken);
+        this.router.navigateByUrl('back-office/dashboard').then();
       }
     );
   }

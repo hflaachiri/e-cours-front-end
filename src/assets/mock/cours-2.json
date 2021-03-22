@@ -1,0 +1,22 @@
+{
+  "id": 2,
+  "name": "Introduction à la POO",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi distinctio dolor excepturi impedit ipsum iste iusto molestiae rerum voluptate! Corporis deleniti facere ipsam laborum, numquam odit perferendis quos sint temporibus!",
+  "schoolSubject": {
+    "id": "11",
+    "name": "POO"
+  },
+  "domain": {
+    "id": "20",
+    "name": "Informatique"
+  },
+  "date": "01-01-2021",
+  "owners": [
+    {
+      "id": "40",
+      "firstName": "Xavier",
+      "lastName": "LEPAIN",
+      "email": "xavier.lepain@univ-amu.fr"
+    }
+  ]
+}

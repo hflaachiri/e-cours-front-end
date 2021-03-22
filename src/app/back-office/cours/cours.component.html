@@ -1,82 +1,51 @@
-<div class="d-flex justify-content-around">
+<form [formGroup]="searchFormGroup" class="d-flex justify-content-around">
   <mat-form-field appearance="outline">
     <mat-label>Théme</mat-label>
-    <mat-select>
-      <mat-option *ngFor="let food of foods" [value]="food.value">
-        {{food.viewValue}}
+    <mat-select formControlName="theme">
+      <mat-option *ngFor="let theme of ($themes | async)" [value]="theme.id">
+        {{theme.name}}
       </mat-option>
     </mat-select>
   </mat-form-field>
 
   <mat-form-field appearance="outline">
     <mat-label>Enseignant</mat-label>
-    <mat-select>
-      <mat-option *ngFor="let food of foods" [value]="food.value">
-        {{food.viewValue}}
+    <mat-select formControlName="enseignant">
+      <mat-option *ngFor="let enseignant of ($enseignants | async)" [value]="enseignant.id">
+        {{enseignant.firstName}} {{enseignant.lastName}}
       </mat-option>
     </mat-select>
   </mat-form-field>
 
   <mat-form-field appearance="outline">
     <mat-label>Date</mat-label>
-    <mat-select>
-      <mat-option *ngFor="let food of foods" [value]="food.value">
-        {{food.viewValue}}
-      </mat-option>
-    </mat-select>
+    <input matInput [matDatepicker]="picker" formControlName="date">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
+</form>
 
-  <mat-form-field appearance="outline">
-    <mat-label>Promotion</mat-label>
-    <mat-select>
-      <mat-option *ngFor="let food of foods" [value]="food.value">
-        {{food.viewValue}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-</div>
-
-<mat-card class="mat-elevation-z4 w-100">
+<mat-card *ngFor="let lesson of ($cours | async)" class="mat-elevation-z4 w-100">
   <mat-card-header>
-    <mat-card-title><b>La programmation orienté objet</b></mat-card-title>
-    <mat-card-subtitle><mat-icon>school</mat-icon> M. Albert DUPONT <mat-icon>date_range</mat-icon> 2020/2021</mat-card-subtitle>
+    <mat-card-title><b>{{lesson.name}}</b></mat-card-title>
+    <mat-card-subtitle>
+      <mat-icon>school</mat-icon>
+      {{lesson.owners[0].firstName}} {{lesson.owners[0].lastName}}
+      <mat-icon>date_range</mat-icon>
+      {{lesson.date}}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
     <p>
-      Lorem ipsum ....
+      {{lesson.description}}
     </p>
   </mat-card-content>
   <mat-card-actions>
-    <a routerLink="/back-office/show/1"><button mat-button><mat-icon>visibility</mat-icon>Suivre</button></a>
+    <a [routerLink]="['/back-office/show', lesson.id]">
+      <button mat-button>
+        <mat-icon>visibility</mat-icon>
+         Suivre
+      </button>
+    </a>
   </mat-card-actions>
 </mat-card>
 
-<mat-card class="mat-elevation-z4 w-100">
-  <mat-card-header>
-    <mat-card-title><b>La programmation orienté objet</b></mat-card-title>
-    <mat-card-subtitle><mat-icon>school</mat-icon> M. Albert DUPONT <mat-icon>date_range</mat-icon> 2020/2021</mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-content>
-    <p>
-      Lorem ipsum ....
-    </p>
-  </mat-card-content>
-  <mat-card-actions>
-    <a routerLink="/back-office/show/2"><button mat-button><mat-icon>visibility</mat-icon>Suivre</button></a>
-  </mat-card-actions>
-</mat-card>
-
-<mat-card class="mat-elevation-z4 w-100">
-  <mat-card-header>
-    <mat-card-title><b>La programmation orienté objet</b></mat-card-title>
-    <mat-card-subtitle><mat-icon>school</mat-icon> M. Albert DUPONT <mat-icon>date_range</mat-icon> 2020/2021</mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-content>
-    <p>
-      Lorem ipsum ....
-    </p>
-  </mat-card-content>
-  <mat-card-actions>
-    <a routerLink="/back-office/show/3"><button mat-button><mat-icon>visibility</mat-icon>Suivre</button></a>
-  </mat-card-actions>
-</mat-card>

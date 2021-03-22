@@ -1,0 +1,20 @@
+[
+  {
+    "id": "30",
+    "firstName": "Albert",
+    "lastName": "DUPONT",
+    "email": "albert.dupont@univ-amu.fr"
+  },
+  {
+    "id": "40",
+    "firstName": "Xavier",
+    "lastName": "LEPAIN",
+    "email": "xavier.lepain@univ-amu.fr"
+  },
+  {
+    "id": "50",
+    "firstName": "Maria",
+    "lastName": "SCHNEIDER",
+    "email": "maria.schneider@univ-amu.fr"
+  }
+]
