@@ -13,6 +13,19 @@ export class EnseignantsService {
   ) {}
 
   getEnseignants(): Observable<any>{
-    return this.httpClient.get(environment.mock.enseignants.findAll);
+    return this.httpClient.get(environment.api.professors.all);
   }
+
+  updateEnseignants(id: string, enseignant: any): Observable<any>{
+    return this.httpClient.put(environment.api.professors.update.replace('${id}', id), enseignant);
+  }
+
+  createEnseignant(enseignant: any): Observable<any>{
+    return this.httpClient.post(environment.api.professors.create, enseignant);
+  }
+
+  deleteEnseignant(id: string): Observable<any>{
+    return this.httpClient.delete(environment.api.professors.delete.replace('${id}', id));
+  }
+
 }

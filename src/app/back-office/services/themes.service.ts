@@ -14,6 +14,6 @@ export class ThemesService {
   }
 
   getThemes(): Observable<any>{
-    return this.httpClient.get(environment.mock.themes.findAll);
+    return this.httpClient.get(environment.api.domains.all);
   }
 }

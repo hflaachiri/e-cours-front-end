@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {CoursService} from '../services/cours.service';
-import {combineLatest, Observable} from 'rxjs';
+import { Observable} from 'rxjs';
 import {ThemesService} from '../services/themes.service';
 import {EnseignantsService} from '../services/enseignants.service';
 import {FormControl, FormGroup} from '@angular/forms';

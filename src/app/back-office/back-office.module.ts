@@ -21,6 +21,9 @@ import {MatTableModule} from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {ReactiveFormsModule} from '@angular/forms';
+import { CreateEnseignantComponent } from './create-enseignant/create-enseignant.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -31,7 +34,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     AfficherCoursComponent,
     ListeEnseignantComponent,
     ListeEtudiantsComponent,
-    ForumComponent],
+    ForumComponent,
+    CreateEnseignantComponent],
   imports: [
     CommonModule,
     BackOfficeRoutingModule,
@@ -47,7 +51,9 @@ import {ReactiveFormsModule} from '@angular/forms';
     MatTableModule,
     MatInputModule,
     MatDatepickerModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDialogModule,
+    MatSnackBarModule
   ]
 })
 export class BackOfficeModule {

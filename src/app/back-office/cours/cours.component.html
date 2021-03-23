@@ -1,6 +1,6 @@
 <form [formGroup]="searchFormGroup" class="d-flex justify-content-around">
   <mat-form-field appearance="outline">
-    <mat-label>Théme</mat-label>
+    <mat-label>Matiére</mat-label>
     <mat-select formControlName="theme">
       <mat-option *ngFor="let theme of ($themes | async)" [value]="theme.id">
         {{theme.name}}

@@ -1,0 +1,30 @@
+<h1 mat-dialog-title>{{data ? 'Modifier les informations' : 'Ajouter un enseignant'}}</h1>
+<div mat-dialog-content>
+
+  <form [formGroup]="createForm">
+
+    <mat-form-field class="w-100">
+      <mat-label>Nom:</mat-label>
+      <input matInput  formControlName="lastName">
+    </mat-form-field>
+
+    <mat-form-field class="w-100">
+      <mat-label>Prénom:</mat-label>
+      <input matInput formControlName="firstName">
+    </mat-form-field>
+
+    <mat-form-field class="w-100">
+      <mat-label>Adresse mail</mat-label>
+      <input matInput  formControlName="email">
+    </mat-form-field>
+
+
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button color="primary" [disabled]="!createForm.valid" [matDialogClose]="createForm.value">Enregistrer
+  </button>
+  <button mat-button color="warn" matDialogClose>Annuler</button>
+
+</div>
+
