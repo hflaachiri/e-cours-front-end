@@ -1,0 +1,43 @@
+<h1 mat-dialog-title>{{data ? 'Modifier les informations' : 'Ajouter un enseignant'}}</h1>
+<div mat-dialog-content>
+
+  <form [formGroup]="createForm">
+
+    <mat-form-field class="w-100">
+      <mat-label>Nom:</mat-label>
+      <input matInput  formControlName="lastName">
+    </mat-form-field>
+
+    <mat-form-field class="w-100">
+      <mat-label>Prénom:</mat-label>
+      <input matInput formControlName="firstName">
+    </mat-form-field>
+
+    <mat-form-field class="w-100">
+      <mat-label>Adresse mail</mat-label>
+      <input matInput  formControlName="email">
+    </mat-form-field>
+
+    <mat-form-field class="w-100">
+      <mat-label>Année universitaire</mat-label>
+      <input matInput  formControlName="schoolYear">
+    </mat-form-field>
+
+    <mat-form-field >
+      <mat-label>Site</mat-label>
+      <mat-select formControlName="site">
+        <mat-option *ngFor="let site of ($sites | async)" [value]="site.id">
+          {{site.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button color="primary" [disabled]="!createForm.valid" [matDialogClose]="createForm.value">Enregistrer
+  </button>
+  <button mat-button color="warn" matDialogClose>Annuler</button>
+
+</div>

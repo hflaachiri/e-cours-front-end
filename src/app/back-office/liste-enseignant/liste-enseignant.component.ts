@@ -6,17 +6,6 @@ import {MatDialog} from '@angular/material/dialog';
 import {CreateEnseignantComponent} from '../create-enseignant/create-enseignant.component';
 import {MatSnackBar} from '@angular/material/snack-bar';
 
-const ELEMENT_DATA: Enseignant[] = [
-  {firstName: 'Albert', lastName: 'DUPONT', email: 'albert.dupont@univ-amu.fr'},
-  {firstName: 'Albert', lastName: 'DUPONT', email: 'albert.dupont@univ-amu.fr'},
-  {firstName: 'Albert', lastName: 'DUPONT', email: 'albert.dupont@univ-amu.fr'},
-  {firstName: 'Albert', lastName: 'DUPONT', email: 'albert.dupont@univ-amu.fr'},
-  {firstName: 'Albert', lastName: 'DUPONT', email: 'albert.dupont@univ-amu.fr'},
-  {firstName: 'Albert', lastName: 'DUPONT', email: 'albert.dupont@univ-amu.fr'},
-  {firstName: 'Albert', lastName: 'DUPONT', email: 'albert.dupont@univ-amu.fr'},
-
-];
-
 @Component({
   selector: 'app-liste-enseignant',
   templateUrl: './liste-enseignant.component.html',
@@ -34,7 +23,6 @@ export class ListeEnseignantComponent implements OnInit {
   }
 
   displayedColumns: string[] = ['firstName', 'lastName', 'email', 'icons'];
-  dataSource = ELEMENT_DATA;
 
   ngOnInit(): void {
     this.refresh();

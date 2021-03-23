@@ -24,6 +24,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { CreateEnseignantComponent } from './create-enseignant/create-enseignant.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { CreateStudentComponent } from './create-student/create-student.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     ListeEnseignantComponent,
     ListeEtudiantsComponent,
     ForumComponent,
-    CreateEnseignantComponent],
+    CreateEnseignantComponent,
+    CreateStudentComponent],
   imports: [
     CommonModule,
     BackOfficeRoutingModule,

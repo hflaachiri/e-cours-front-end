@@ -22,6 +22,15 @@ export const environment = {
       update: 'http://localhost:8082/api/professors/${id}',
       create: 'http://localhost:8082/api/professors',
       delete: 'http://localhost:8082/api/professors/${id}'
+    },
+    students: {
+      all: 'http://localhost:8082/api/students',
+      update: 'http://localhost:8082/api/students/${id}',
+      create: 'http://localhost:8082/api/students',
+      delete: 'http://localhost:8082/api/students/${id}'
+    },
+    sites: {
+      all: 'http://localhost:8082/api/sites'
     }
   },
   mock: {
