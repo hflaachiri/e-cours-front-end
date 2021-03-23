@@ -9,6 +9,9 @@ export const environment = {
     auth: {
       login: 'http://localhost:8082/api/auth/signin',
       signup: 'http://localhost:8082/api/auth/signup/student'
+    },
+    lessons: {
+      all: 'http://localhost:8082/api/lessons'
     }
   },
   mock: {

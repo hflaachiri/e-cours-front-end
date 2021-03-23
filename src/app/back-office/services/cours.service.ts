@@ -16,7 +16,7 @@ export class CoursService {
   }
 
   getCours(theme: string, professor: string, date: Date): Observable<any> {
-    return this.httpClient.get(environment.mock.cours.search, {
+    return this.httpClient.get(environment.api.lessons.all, {
       params: {
         theme,
         professor,
@@ -27,7 +27,6 @@ export class CoursService {
 
   getCoursById(id: string): Observable<any> {
     const url = environment.mock.cours.findById.replace('${id}', id);
-    console.log(url)
     return this.httpClient.get(environment.mock.cours.findById.replace('${id}', id));
   }
 }
