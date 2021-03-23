@@ -26,7 +26,6 @@ export class CoursService {
   }
 
   getCoursById(id: string): Observable<any> {
-    const url = environment.mock.cours.findById.replace('${id}', id);
-    return this.httpClient.get(environment.mock.cours.findById.replace('${id}', id));
+    return this.httpClient.get(environment.api.lessons.byId.replace('${id}', id));
   }
 }

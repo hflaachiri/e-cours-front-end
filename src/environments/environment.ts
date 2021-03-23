@@ -11,7 +11,8 @@ export const environment = {
       signup: 'http://localhost:8082/api/auth/signup/student'
     },
     lessons: {
-      all: 'http://localhost:8082/api/lessons'
+      all: 'http://localhost:8082/api/lessons',
+      byId: 'http://localhost:8082/api/lessons/${id}'
     }
   },
   mock: {
