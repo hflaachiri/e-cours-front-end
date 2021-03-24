@@ -34,8 +34,8 @@ export class CreateLessonComponent implements OnInit {
       this.createForm.setValue({
         id: this.data.id,
         name: this.data.name,
-        schoolSubject: this.data.schoolSubject,
-        domain: this.data.domain,
+        schoolSubject: this.data.schoolSubject.name,
+        domain: this.data.domain.name,
         videoLink: this.data.videoLink,
         documentsLinks: this.data.documentsLinks,
         owners: this.data.owners,
