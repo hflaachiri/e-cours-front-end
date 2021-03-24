@@ -3,7 +3,6 @@ import {Observable} from 'rxjs';
 import {CoursService} from '../services/cours.service';
 import {MatDialog} from '@angular/material/dialog';
 import {MatSnackBar} from '@angular/material/snack-bar';
-import {CreateEnseignantComponent} from '../create-enseignant/create-enseignant.component';
 import {CreateLessonComponent} from '../create-lesson/create-lesson.component';
 
 @Component({

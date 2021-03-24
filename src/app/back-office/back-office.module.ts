@@ -28,6 +28,7 @@ import { CreateStudentComponent } from './create-student/create-student.componen
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { EspaceProfsComponent } from './espace-profs/espace-profs.component';
 import { CreateLessonComponent } from './create-lesson/create-lesson.component';
+import { ForumCoursComponent } from './forum-cours/forum-cours.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { CreateLessonComponent } from './create-lesson/create-lesson.component';
     CreateEnseignantComponent,
     CreateStudentComponent,
     EspaceProfsComponent,
-    CreateLessonComponent],
+    CreateLessonComponent,
+    ForumCoursComponent],
   imports: [
     CommonModule,
     BackOfficeRoutingModule,

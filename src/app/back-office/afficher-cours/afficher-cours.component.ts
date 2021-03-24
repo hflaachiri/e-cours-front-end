@@ -2,6 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {CoursService} from '../services/cours.service';
 import {ActivatedRoute} from '@angular/router';
 import {Observable} from 'rxjs';
+import {MatDialog} from '@angular/material/dialog';
+import {CreateEnseignantComponent} from '../create-enseignant/create-enseignant.component';
+import {ForumCoursComponent} from '../forum-cours/forum-cours.component';
 
 @Component({
   selector: 'app-afficher-cours',
@@ -16,6 +19,7 @@ export class AfficherCoursComponent implements OnInit {
   constructor(
     private coursService: CoursService,
     private route: ActivatedRoute,
+    private dialog: MatDialog,
   ) {
     this.coursId = this.route.snapshot.params.id;
   }
@@ -26,6 +30,13 @@ export class AfficherCoursComponent implements OnInit {
         this.lesson = cours;
       }
     );
+  }
+
+  afficherForum(): void{
+    const dialogRef = this.dialog.open(ForumCoursComponent, {
+      width: '700px',
+      maxWidth: '50%',
+    });
   }
 
 }

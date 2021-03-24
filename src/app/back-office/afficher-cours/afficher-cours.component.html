@@ -1,14 +1,24 @@
-<mat-card *ngIf="lesson">
+<mat-card *ngIf="lesson" xmlns="http://www.w3.org/1999/html">
   <mat-card-header>
     <mat-card-title><b>{{lesson.name}}</b></mat-card-title>
     <mat-card-subtitle>
-      <!-- <mat-icon>school</mat-icon> {{lesson.owners[0].firstName}} {{lesson.owners[0].lastName}} -->
-     <mat-icon>date_range</mat-icon> {{lesson.date}}
-      <mat-icon>subject</mat-icon> {{lesson.domain.name}}
+      <div class="d-flex flex-column">
+        <div class="d-flex ">
+          <mat-icon>school</mat-icon> {{lesson.owners[0].firstName}} {{lesson.owners[0].lastName}}
+        </div>
+        <div class="d-flex ">
+          <mat-icon>date_range</mat-icon> {{lesson.date}}
+        </div>
+        <div class="d-flex ">
+          <mat-icon>subject</mat-icon> {{lesson.domain.name}}
+        </div>
+
+      </div>
     </mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
     <p>
+      <b style="color: darkcyan">Description du cours :</b> <br>
      {{lesson.description}}
     </p>
     <iframe width="420" height="315"
@@ -16,11 +26,11 @@
     </iframe>
   </mat-card-content>
   <mat-card-actions>
-    <a routerLink="/#"><button mat-button><mat-icon>movie</mat-icon>Accéder au video sur YouTube </button></a>
-    <a href="{{lesson.documentsLinks[0]}}"><button mat-button><mat-icon>book</mat-icon>Accéder au cours sur le site d'AMU</button></a>
+    <a href="{{lesson.videoLink}}"><button mat-button><mat-icon>movie</mat-icon>Accéder au video sur YouTube </button></a>
+    <a href="{{lesson.documentsLinks[0]}}"><button mat-button><mat-icon>book</mat-icon>Accéder aux documents</button></a>
   </mat-card-actions>
 </mat-card>
 
-<button mat-fab color="primary" style="position: fixed; bottom: 20px; right: 20px" >
+<button mat-fab color="primary" style="position: fixed; top: 100px; right: 40px" (click)="afficherForum()">
   <mat-icon>question_answer</mat-icon>
 </button>
