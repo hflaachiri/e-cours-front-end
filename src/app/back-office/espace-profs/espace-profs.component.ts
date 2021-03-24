@@ -64,7 +64,7 @@ export class EspaceProfsComponent implements OnInit {
     );
   }
 
-  createlesson(data: any): void{
+  createlesson(): void{
     const dialogRef = this.dialog.open(CreateLessonComponent, {
       width: '700px',
       maxWidth: '50%',
