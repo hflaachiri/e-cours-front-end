@@ -12,7 +12,10 @@ export const environment = {
     },
     lessons: {
       all: 'http://localhost:8082/api/lessons',
-      byId: 'http://localhost:8082/api/lessons/${id}'
+      byId: 'http://localhost:8082/api/lessons/${id}',
+      update: 'http://localhost:8082/api/lessons/${id}',
+      create: 'http://localhost:8082/api/lessons',
+      delete: 'http://localhost:8082/api/lessons/${id}'
     },
     domains: {
       all: 'http://localhost:8082/api/domains'

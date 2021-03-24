@@ -1,0 +1,52 @@
+<h1 mat-dialog-title>{{data ? 'Modifier un cours' : 'Ajouter un cours'}}</h1>
+<div mat-dialog-content>
+
+  <form [formGroup]="createForm">
+
+    <mat-form-field class="w-100">
+      <mat-label>Nom du cours:</mat-label>
+      <input matInput  formControlName="name">
+    </mat-form-field>
+
+    <mat-form-field class="w-100">
+      <mat-label>Matiére:</mat-label>
+      <input matInput formControlName="schoolSubject">
+    </mat-form-field>
+
+    <mat-form-field class="w-100">
+      <mat-label>domaine</mat-label>
+      <input matInput  formControlName="domain">
+    </mat-form-field>
+
+    <mat-form-field class="w-100">
+      <mat-label>Description</mat-label>
+      <input matInput  formControlName="description">
+    </mat-form-field>
+
+    <mat-form-field class="w-100">
+      <mat-label>Lien des documents</mat-label>
+      <input matInput  formControlName="documentsLinks">
+    </mat-form-field>
+
+    <mat-form-field class="w-100">
+      <mat-label>Lien du video</mat-label>
+      <input matInput  formControlName="videoLink">
+    </mat-form-field>
+
+    <mat-form-field >
+      <mat-label>Enseignant</mat-label>
+      <mat-select formControlName="owners">
+        <mat-option *ngFor="let enseignant of ($enseignants | async)" [value]="enseignant.id">
+          {{enseignant.firstName}} {{enseignant.lastName}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button color="primary" [disabled]="!createForm.valid" [matDialogClose]="createForm.value">Enregistrer
+  </button>
+  <button mat-button color="warn" matDialogClose>Annuler</button>
+
+</div>

@@ -35,6 +35,11 @@ export class BackOfficeTemplateComponent implements OnInit {
       icon: 'group',
       link: '/back-office/etudiants',
       label: 'Etudiants',
+    },
+    {
+      icon: 'settings',
+      link: '/back-office/espace-profs',
+      label: 'Espace des enseignants',
     }
   ];
 

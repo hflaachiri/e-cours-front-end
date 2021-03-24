@@ -7,6 +7,7 @@ import {AfficherCoursComponent} from './afficher-cours/afficher-cours.component'
 import {ListeEnseignantComponent} from './liste-enseignant/liste-enseignant.component';
 import {ListeEtudiantsComponent} from './liste-etudiants/liste-etudiants.component';
 import {ForumComponent} from './forum/forum.component';
+import {EspaceProfsComponent} from './espace-profs/espace-profs.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
       {
         path: 'forum',
         component: ForumComponent
+      },
+      {
+        path: 'espace-profs',
+        component: EspaceProfsComponent
       },
     ]
   },

@@ -28,4 +28,16 @@ export class CoursService {
   getCoursById(id: string): Observable<any> {
     return this.httpClient.get(environment.api.lessons.byId.replace('${id}', id));
   }
+
+  updateCours(id: string, cours: any): Observable<any>{
+    return this.httpClient.put(environment.api.lessons.update.replace('${id}', id), cours);
+  }
+
+  createCours(cours: any): Observable<any>{
+    return this.httpClient.post(environment.api.lessons.create, cours);
+  }
+
+  deleteCours(id: string): Observable<any>{
+    return this.httpClient.delete(environment.api.lessons.delete.replace('${id}', id));
+  }
 }

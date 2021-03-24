@@ -25,6 +25,9 @@ import { CreateEnseignantComponent } from './create-enseignant/create-enseignant
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { CreateStudentComponent } from './create-student/create-student.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { EspaceProfsComponent } from './espace-profs/espace-profs.component';
+import { CreateLessonComponent } from './create-lesson/create-lesson.component';
 
 
 @NgModule({
@@ -37,7 +40,9 @@ import { CreateStudentComponent } from './create-student/create-student.componen
     ListeEtudiantsComponent,
     ForumComponent,
     CreateEnseignantComponent,
-    CreateStudentComponent],
+    CreateStudentComponent,
+    EspaceProfsComponent,
+    CreateLessonComponent],
   imports: [
     CommonModule,
     BackOfficeRoutingModule,
@@ -55,7 +60,8 @@ import { CreateStudentComponent } from './create-student/create-student.componen
     MatDatepickerModule,
     ReactiveFormsModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatProgressSpinnerModule
   ]
 })
 export class BackOfficeModule {
