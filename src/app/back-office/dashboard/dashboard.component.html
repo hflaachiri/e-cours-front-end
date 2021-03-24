@@ -1,1 +1,42 @@
-<h2>Bonjour !</h2>
+<h1>Bonjour sur votre site web E-cours!</h1>
+<div class="d-flex bd-highlight">
+  <div class="p-2 flex-grow-1 bd-highlight">
+    <img src="./assets/images/DIRCOM_CAMPAGNE_MASQUE_ECRAN__SE_1920x1080.jpg" alt="E-cours">
+  </div>
+  <div class="p-2 bd-highlight">
+    <h2><b>Accès rapide aux cours:</b></h2>
+    <ng-container *ngIf="$cours | async as cours; else loading">
+      <mat-card *ngFor="let lesson of cours" class="mat-elevation-z4 w-100">
+        <mat-card-header>
+          <mat-card-title><b>{{lesson.name}}</b></mat-card-title>
+          <mat-card-subtitle>
+            <mat-icon>school</mat-icon>
+            {{lesson.owners[0].firstName}} {{lesson.owners[0].lastName}}
+            <mat-icon>date_range</mat-icon>
+            {{lesson.date}}
+            <mat-icon>subject</mat-icon>
+            {{lesson.domain.name}}
+          </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-actions>
+          <a [routerLink]="['/back-office/show', lesson.id]">
+            <button mat-button>
+              <mat-icon>visibility</mat-icon>
+              Suivre
+            </button>
+          </a>
+        </mat-card-actions>
+      </mat-card>
+
+    </ng-container>
+
+    <ng-template #loading>
+      <div class="d-flex flex-column justify-content-center align-content-center align-items-center" style="height: 500px">
+        <div></div>
+        <mat-spinner></mat-spinner>
+        <div></div>
+      </div>
+    </ng-template>
+  </div>
+</div>
+

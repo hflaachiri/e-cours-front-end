@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Observable} from 'rxjs';
+import {CoursService} from '../services/cours.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  $cours: Observable<Array<any>>;
+  constructor(
+    private coursService: CoursService,
+  ) { }
 
   ngOnInit(): void {
+    this.$cours = this.coursService.getCours(undefined, undefined, undefined);
   }
 
 }
