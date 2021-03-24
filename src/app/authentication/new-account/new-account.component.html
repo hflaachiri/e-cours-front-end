@@ -1,3 +1,12 @@
+<div style="height: 30px">
+
+</div>
+<mat-radio-group aria-label="account type" [formControl]="type">
+  <div class="d-flex justify-content-around">
+    <mat-radio-button value="student">Etudiant</mat-radio-button>
+    <mat-radio-button value="professor">Enseignant</mat-radio-button>
+  </div>
+</mat-radio-group>
 
   <form [formGroup]="newAccountForm" (ngSubmit)="singUp()" class="w-100 d-flex flex-column justify-content-center">
     <div class="d-flex justify-content-between">
@@ -16,12 +25,14 @@
 
     <app-password-input formControlName="password" class="w-100"></app-password-input>
 
-    <div class="d-flex justify-content-around">
+    <div *ngIf="type.value == 'student'" class="d-flex justify-content-around">
+
       <mat-form-field appearance="outline" class="w-50">
         <mat-label>Année scolaire</mat-label>
         <input type="text" id="schoolYear" matInput formControlName="schoolYear">
       </mat-form-field>
       <div class="column-divider"></div>
+
       <mat-form-field appearance="outline" class="w-50">
         <mat-label>Site</mat-label>
         <input type="text" id="site" matInput formControlName="site">

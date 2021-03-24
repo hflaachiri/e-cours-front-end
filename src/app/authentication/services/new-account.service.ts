@@ -28,4 +28,8 @@ export class NewAccountService {
   signup(signUpForm: SignUpForm ): Observable<any> {
     return this.http.post(environment.api.auth.signup, signUpForm);
   }
+
+  signupProfessor(signUpForm: any): Observable<any>{
+    return this.http.post((environment.api.auth.signup_Professor), signUpForm);
+  }
 }

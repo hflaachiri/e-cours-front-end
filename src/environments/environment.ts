@@ -8,7 +8,8 @@ export const environment = {
   api: {
     auth: {
       login: 'http://localhost:8082/api/auth/signin',
-      signup: 'http://localhost:8082/api/auth/signup/student'
+      signup: 'http://localhost:8082/api/auth/signup/student',
+      signup_Professor: 'http://localhost:8082/api/auth/signup/professor'
     },
     lessons: {
       all: 'http://localhost:8082/api/lessons',

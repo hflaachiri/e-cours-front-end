@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {NewAccountService, SignUpForm} from '../services/new-account.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
-import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-new-account',
@@ -10,13 +9,14 @@ import {Router} from '@angular/router';
   styleUrls: ['./new-account.component.scss']
 })
 export class NewAccountComponent implements OnInit {
+  type = new FormControl('student');
   newAccountForm: FormGroup = new FormGroup({
     firstName: new FormControl(),
     lastName: new FormControl(),
     email: new FormControl(),
     password: new FormControl(),
     schoolYear: new FormControl(),
-    site: new FormControl()
+    site: new FormControl(),
   });
 
 
@@ -27,24 +27,45 @@ export class NewAccountComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.type.valueChanges.subscribe(
+      (value) => {
+
+      }
+    );
   }
 
   singUp(): void {
     const signupForm: SignUpForm = this.newAccountForm.value;
-    signupForm.site = {
-      name: this.newAccountForm.value.site
-    };
-    this.newAccountService.signup(signupForm).subscribe(
-      (message) => {
-        this.snackBar.open('Votre compte a été enregistrer! un mail vient d\'être envoyer à votre adresse mail', 'ok', {
-          duration: 10000,
-        });
-      },
-      (error) => {
-        this.snackBar.open('Une erreur est survenue lors du création du compte', 'ok', {
-          duration: 10000,
-        });
-      }
-    );
+
+    if (this.type.value === 'student') {
+      signupForm.site = {
+        name: this.newAccountForm.value.site
+      };
+      this.newAccountService.signup(signupForm).subscribe(
+        (message) => {
+          this.snackBar.open('Votre compte a été enregistrer! un mail vient d\'être envoyer à votre adresse mail', 'ok', {
+            duration: 10000,
+          });
+        },
+        (error) => {
+          this.snackBar.open('Une erreur est survenue lors du création du compte', 'ok', {
+            duration: 10000,
+          });
+        }
+      );
+    } else {
+      this.newAccountService.signupProfessor(signupForm).subscribe(
+        (message) => {
+          this.snackBar.open('Votre compte a été enregistrer! un mail vient d\'être envoyer à votre adresse mail', 'ok', {
+            duration: 10000,
+          });
+        },
+        (error) => {
+          this.snackBar.open('Une erreur est survenue lors du création du compte', 'ok', {
+            duration: 10000,
+          });
+        }
+      );
+    }
   }
 }
