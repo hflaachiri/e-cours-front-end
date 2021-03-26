@@ -15,12 +15,12 @@ export class CoursService {
   ) {
   }
 
-  getCours(theme: string, professor: string, date: Date): Observable<any> {
-    return this.httpClient.get(environment.api.lessons.all, {
+  getCours(domain: string, profId: string, date: Date): Observable<any> {
+    return this.httpClient.get(environment.api.lessons.filter, {
       params: {
-        theme,
-        professor,
-        date: this.datePipe.transform(date, 'dd-MM-yyyy')
+        domain: domain ? domain : null,
+        profId: profId ? profId : '0',
+        date: date ? this.datePipe.transform(date, 'dd-MM-yyyy') : null
       }
     });
   }
@@ -29,15 +29,15 @@ export class CoursService {
     return this.httpClient.get(environment.api.lessons.byId.replace('${id}', id));
   }
 
-  updateCours(id: string, cours: any): Observable<any>{
+  updateCours(id: string, cours: any): Observable<any> {
     return this.httpClient.put(environment.api.lessons.update.replace('${id}', id), cours);
   }
 
-  createCours(cours: any): Observable<any>{
+  createCours(cours: any): Observable<any> {
     return this.httpClient.post(environment.api.lessons.create, cours);
   }
 
-  deleteCours(id: string): Observable<any>{
+  deleteCours(id: string): Observable<any> {
     return this.httpClient.delete(environment.api.lessons.delete.replace('${id}', id));
   }
 }

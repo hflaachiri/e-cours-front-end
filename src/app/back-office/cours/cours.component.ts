@@ -16,9 +16,9 @@ export class CoursComponent implements OnInit {
   $themes: Observable<Array<any>>;
   $enseignants: Observable<Array<any>>;
   searchFormGroup: FormGroup = new FormGroup({
-    theme: new FormControl(),
-    enseignant: new FormControl(),
-    date: new FormControl()
+    theme: new FormControl(null),
+    enseignant: new FormControl(null),
+    date: new FormControl(null)
   });
 
   constructor(
@@ -37,6 +37,10 @@ export class CoursComponent implements OnInit {
         this.$cours = this.coursService.getCours(formValue.theme, formValue.enseignant, formValue.date);
       }
     );
+  }
+
+  deleteFilter(): void{
+    this.$cours = this.coursService.getCours(undefined, undefined, undefined);
   }
 
 }

@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {NewAccountService, SignUpForm} from '../services/new-account.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import {SitesService} from '../../back-office/services/sites.service';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-new-account',
@@ -10,6 +12,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 })
 export class NewAccountComponent implements OnInit {
   type = new FormControl('student');
+  $sites: Observable<Array<any>>;
   newAccountForm: FormGroup = new FormGroup({
     firstName: new FormControl(),
     lastName: new FormControl(),
@@ -22,11 +25,13 @@ export class NewAccountComponent implements OnInit {
 
   constructor(
     private newAccountService: NewAccountService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private siteService: SitesService
   ) {
   }
 
   ngOnInit(): void {
+    this.$sites = this.siteService.getSites();
     this.type.valueChanges.subscribe(
       (value) => {
 

@@ -13,6 +13,7 @@ export const environment = {
     },
     lessons: {
       all: 'http://localhost:8082/api/lessons',
+      filter: 'http://localhost:8082/api/lessons/filtre',
       byId: 'http://localhost:8082/api/lessons/${id}',
       update: 'http://localhost:8082/api/lessons/${id}',
       create: 'http://localhost:8082/api/lessons',

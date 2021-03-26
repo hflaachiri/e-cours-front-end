@@ -35,7 +35,11 @@
 
       <mat-form-field appearance="outline" class="w-50">
         <mat-label>Site</mat-label>
-        <input type="text" id="site" matInput formControlName="site">
+        <mat-select formControlName="site">
+          <mat-option *ngFor="let site of ($sites | async)" [value]="site.id">
+            {{site.name}}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
     </div>
     <div class="form-actions">

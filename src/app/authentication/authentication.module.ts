@@ -12,22 +12,24 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { NewAccountComponent } from './new-account/new-account.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatSelectModule} from '@angular/material/select';
 
 
 
 @NgModule({
   declarations: [LoginComponent, AuthenticationTemplateComponent, NewAccountComponent],
-  imports: [
-    CommonModule,
-    AuthenticationRoutingModule,
-    ReactiveFormsModule,
-    CoreModule,
-    MatInputModule,
-    MatButtonModule,
-    MatCardModule,
-    MatTabsModule,
-    MatSnackBarModule,
-    MatRadioModule
-  ]
+    imports: [
+        CommonModule,
+        AuthenticationRoutingModule,
+        ReactiveFormsModule,
+        CoreModule,
+        MatInputModule,
+        MatButtonModule,
+        MatCardModule,
+        MatTabsModule,
+        MatSnackBarModule,
+        MatRadioModule,
+        MatSelectModule
+    ]
 })
 export class AuthenticationModule { }
