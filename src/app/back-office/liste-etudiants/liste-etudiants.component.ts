@@ -4,7 +4,6 @@ import {MatDialog} from '@angular/material/dialog';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {Observable} from 'rxjs';
 import {CreateStudentComponent} from '../create-student/create-student.component';
-import {CreateEnseignantComponent} from '../create-enseignant/create-enseignant.component';
 
 
 @Component({
@@ -37,6 +36,7 @@ export class ListeEtudiantsComponent implements OnInit {
       maxWidth: '50%',
       data
     });
+
     dialogRef.afterClosed().subscribe(
       student => {
         if (student) {

@@ -35,6 +35,12 @@ export const environment = {
     },
     sites: {
       all: 'http://localhost:8082/api/sites'
+    },
+    schoolSubject: {
+      all: 'http://localhost:8082/api/subjects'
+    },
+    domain: {
+      all: 'http://localhost:8082/api/domains'
     }
   },
   mock: {

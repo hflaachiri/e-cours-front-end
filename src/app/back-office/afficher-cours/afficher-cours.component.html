@@ -21,8 +21,9 @@
       <b style="color: darkcyan">Description du cours :</b> <br>
      {{lesson.description}}
     </p>
-    <iframe width="420" height="315"
-            src="https://www.youtube.com/watch?v=mfOqvDwL1Mw">
+    <iframe width="560" height="315" src="{{lesson.videoLink}}"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
     </iframe>
   </mat-card-content>
   <mat-card-actions>

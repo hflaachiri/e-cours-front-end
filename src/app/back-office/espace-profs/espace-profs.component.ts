@@ -4,11 +4,13 @@ import {CoursService} from '../services/cours.service';
 import {MatDialog} from '@angular/material/dialog';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {CreateLessonComponent} from '../create-lesson/create-lesson.component';
+import {DatePipe} from '@angular/common';
 
 @Component({
   selector: 'app-espace-profs',
   templateUrl: './espace-profs.component.html',
-  styleUrls: ['./espace-profs.component.scss']
+  styleUrls: ['./espace-profs.component.scss'],
+  providers: [DatePipe]
 })
 export class EspaceProfsComponent implements OnInit {
 
@@ -17,7 +19,8 @@ export class EspaceProfsComponent implements OnInit {
   constructor(
     private coursService: CoursService,
     private dialog: MatDialog,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private datePipe: DatePipe
   ) { }
 
   displayedColumns: string[] = ['name', 'schoolSubject', 'domain', 'professor', 'icons'];
@@ -46,6 +49,7 @@ export class EspaceProfsComponent implements OnInit {
             videoLink: lesson.videoLink,
             documentsLinks: lesson.documentsLinks,
             owners: lesson.owners,
+            date: this.datePipe.transform(lesson.date, 'dd-MM-yyyy'),
             description: lesson.description,
           }).subscribe(
             sect => {
@@ -77,8 +81,9 @@ export class EspaceProfsComponent implements OnInit {
             schoolSubject: lesson.schoolSubject,
             domain: lesson.domain,
             videoLink: lesson.videoLink,
-            documentsLinks: lesson.documentsLinks,
+            documentsLinks: [lesson.documentsLinks],
             owners: lesson.owners,
+            date: this.datePipe.transform(lesson.date, 'dd-MM-yyyy'),
             description: lesson.description,
           }).subscribe(
             sect => {

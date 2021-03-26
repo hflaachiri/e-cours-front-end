@@ -9,17 +9,33 @@
     </mat-form-field>
 
     <mat-form-field class="w-100">
+      <mat-label>Date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field class="w-100">
       <mat-label>Matiére:</mat-label>
-      <input matInput formControlName="schoolSubject">
+      <mat-select formControlName="schoolSubject">
+        <mat-option *ngFor="let schoolSubject of ($schoolSubjects | async)" [value]="{name: schoolSubject.name}">
+          {{schoolSubject.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+    <mat-form-field class="w-100">
+      <mat-label>Domaine:</mat-label>
+      <mat-select formControlName="domain">
+        <mat-option *ngFor="let domain of ($domains | async)" [value]="{name: domain.name}">
+          {{domain.name}}
+        </mat-option>
+      </mat-select>
     </mat-form-field>
 
     <mat-form-field class="w-100">
-      <mat-label>domaine</mat-label>
-      <input matInput  formControlName="domain">
-    </mat-form-field>
-
-    <mat-form-field class="w-100">
-      <mat-label>Description</mat-label>
+      <mat-label>Description:</mat-label>
       <input matInput  formControlName="description">
     </mat-form-field>
 
@@ -36,7 +52,7 @@
     <mat-form-field >
       <mat-label>Enseignant</mat-label>
       <mat-select formControlName="owners">
-        <mat-option *ngFor="let enseignant of ($enseignants | async)" [value]="enseignant.id">
+        <mat-option *ngFor="let enseignant of ($enseignants | async)" [value]="[{id: enseignant.id}]">
           {{enseignant.firstName}} {{enseignant.lastName}}
         </mat-option>
       </mat-select>
