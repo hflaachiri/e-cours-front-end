@@ -19,6 +19,7 @@ export class CreateStudentComponent implements OnInit {
     email: new FormControl(undefined, [Validators.required]),
     schoolYear: new FormControl(undefined, [Validators.required]),
     site: new FormControl(undefined, [Validators.required]),
+    password: new FormControl(undefined, [Validators.required]),
   });
 
   constructor(
@@ -29,14 +30,7 @@ export class CreateStudentComponent implements OnInit {
   ngOnInit(): void {
     this.$sites = this.siteService.getSites();
     if (this.data) {
-      this.createForm.setValue({
-        id: this.data.id,
-        firstName: this.data.firstName,
-        lastName: this.data.lastName,
-        email: this.data.email,
-        schoolYear: this.data.schoolYear,
-        site: this.data.site,
-      });
+      this.createForm.patchValue(this.data);
     }
   }
 

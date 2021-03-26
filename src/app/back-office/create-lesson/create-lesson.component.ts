@@ -31,16 +31,7 @@ export class CreateLessonComponent implements OnInit {
   ngOnInit(): void {
     this.$enseignants = this.enseignantService.getEnseignants();
     if (this.data) {
-      this.createForm.setValue({
-        id: this.data.id,
-        name: this.data.name,
-        schoolSubject: this.data.schoolSubject.name,
-        domain: this.data.domain.name,
-        videoLink: this.data.videoLink,
-        documentsLinks: this.data.documentsLinks,
-        owners: this.data.owners,
-        description: this.data.description,
-      });
+      this.createForm.patchValue(this.data);
     }
   }
 
