@@ -29,6 +29,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { EspaceProfsComponent } from './espace-profs/espace-profs.component';
 import { CreateLessonComponent } from './create-lesson/create-lesson.component';
 import { ForumCoursComponent } from './forum-cours/forum-cours.component';
+import {CoreModule} from '../core/core.module';
 
 
 @NgModule({
@@ -45,26 +46,27 @@ import { ForumCoursComponent } from './forum-cours/forum-cours.component';
     EspaceProfsComponent,
     CreateLessonComponent,
     ForumCoursComponent],
-  imports: [
-    CommonModule,
-    BackOfficeRoutingModule,
-    MatSidenavModule,
-    MatListModule,
-    MatIconModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatCardModule,
-    MatOptionModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatTableModule,
-    MatInputModule,
-    MatDatepickerModule,
-    ReactiveFormsModule,
-    MatDialogModule,
-    MatSnackBarModule,
-    MatProgressSpinnerModule
-  ]
+    imports: [
+        CommonModule,
+        BackOfficeRoutingModule,
+        MatSidenavModule,
+        MatListModule,
+        MatIconModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatCardModule,
+        MatOptionModule,
+        MatFormFieldModule,
+        MatSelectModule,
+        MatTableModule,
+        MatInputModule,
+        MatDatepickerModule,
+        ReactiveFormsModule,
+        MatDialogModule,
+        MatSnackBarModule,
+        MatProgressSpinnerModule,
+        CoreModule
+    ]
 })
 export class BackOfficeModule {
 }

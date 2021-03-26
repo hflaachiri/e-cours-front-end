@@ -41,11 +41,7 @@ export class ListeEnseignantComponent implements OnInit {
     dialogRef.afterClosed().subscribe(
       enseignant => {
         if (enseignant) {
-          this.enseignantsService.updateEnseignants(enseignant.id, {
-            firstName: enseignant.firstName,
-            lastName: enseignant.lastName,
-            email: enseignant.email
-          }).subscribe(
+          this.enseignantsService.updateEnseignants(enseignant.id, enseignant).subscribe(
             sect => {
 
             },

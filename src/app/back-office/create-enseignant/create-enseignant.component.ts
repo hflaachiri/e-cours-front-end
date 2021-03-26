@@ -14,23 +14,19 @@ export class CreateEnseignantComponent implements OnInit {
     lastName: new FormControl(undefined, [Validators.required]),
     firstName: new FormControl(undefined, [Validators.required]),
     email: new FormControl(undefined, [Validators.required]),
+    password: new FormControl(undefined, [Validators.required]),
   });
 
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
     if (this.data) {
-      this.createForm.setValue({
-        id: this.data.id,
-        firstName: this.data.firstName,
-        lastName: this.data.lastName,
-        email: this.data.email,
-      });
+      this.createForm.patchValue(this.data);
     }
-
   }
 
 }
