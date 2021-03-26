@@ -40,13 +40,7 @@ export class ListeEtudiantsComponent implements OnInit {
     dialogRef.afterClosed().subscribe(
       student => {
         if (student) {
-          this.studentService.updateStudent(student.id, {
-            firstName: student.firstName,
-            lastName: student.lastName,
-            email: student.email,
-            schoolYear: student.schoolYear,
-            site: student.site,
-          }).subscribe(
+          this.studentService.updateStudent(student.id, student).subscribe(
             sect => {
 
             },
