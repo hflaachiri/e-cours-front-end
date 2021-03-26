@@ -40,7 +40,7 @@ export class CoursComponent implements OnInit {
   }
 
   deleteFilter(): void{
-    this.$cours = this.coursService.getCours(undefined, undefined, undefined);
+    this.searchFormGroup.reset();
   }
 
 }
