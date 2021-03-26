@@ -21,10 +21,14 @@
       <b style="color: darkcyan">Description du cours :</b> <br>
      {{lesson.description}}
     </p>
-    <iframe width="560" height="315" src="{{lesson.videoLink}}"
-            title="YouTube video player" frameborder="0"
+    <iframe width="560" height="315"
+            src="{{lesson.videoLink}}" title="YouTube video player" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+
     </iframe>
+    <!-- <iframe width="420" height="315"
+            src="{{lesson.videoLink}}">
+    </iframe> -->
   </mat-card-content>
   <mat-card-actions>
     <a href="{{lesson.videoLink}}"><button mat-button><mat-icon>movie</mat-icon>Accéder au video sur YouTube </button></a>
