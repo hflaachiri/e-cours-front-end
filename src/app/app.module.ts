@@ -11,6 +11,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {MatNativeDateModule} from '@angular/material/core';
 import {DatePipe} from '@angular/common';
 import {AuthInterceptorService} from './authentication/services/auth-interceptor.service';
+import { SafePipe } from './safe.pipe';
 
 /**
  * This function is used by the jwt helper to get the token
@@ -38,6 +39,7 @@ export function tokenGetter(): string {
 
   ],
   providers: [
+    SafePipe,
     DatePipe,
     {
       provide: HTTP_INTERCEPTORS,
